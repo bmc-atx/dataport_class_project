@@ -12,6 +12,7 @@ body {
   margin: 0;
 	background-color: #fafafa;
 }
+
 .menuOpenOpacity {
 	width: 100%;
 	height: 100%;
@@ -22,6 +23,7 @@ body {
 	z-index: 2;
 	display: none;
 }
+
 
 /* ----------------------------------------
 Typography
@@ -108,6 +110,11 @@ header {
 	justify-content: space-between;
 	margin-bottom: 32px;
 }
+.scrollBorder {
+	box-shadow: 0 3px 11px rgba(0, 0, 0, .1);
+}
+
+
 .headerContent {
 	display: flex;
 	justify-content: space-between;
@@ -117,7 +124,6 @@ header {
 .logoBox {
 	display: flex;
 	justify-content: flex-start;
-	max-width: 560px;
 }
 .logoBoxIcon {
 	max-width: 100%;
@@ -136,12 +142,24 @@ sidebar
 nav {
   width: 300px;
   height: 100%;
-  position: absolute;
+	position: absolute;
   top: 0;
-  left: 0;
+	left: -300px;
 	background-color: #fafafa;
 	z-index: 3;
+  transition: all 300ms ease-in-out;
 }
+
+.open {
+	left: 0px;
+}
+
+.navIcon {
+	padding: 16px 0 24px;
+	display: flex;
+	justify-content: center;
+}
+
 .closeButton {
 	margin: 16px;
 	padding: 0;
@@ -173,22 +191,13 @@ nav li:hover {
 	color: #2196F3;
 }
 
-.sidebar {
-	transform: translateX(-300px);
-  transition: all 0.35s ease-in-out;
-}
-
 /* ----------------------------------------
 open the sidebar
 ------------------------------------------- */
 .contentShift {
 	transform: translateX(300px);
-	transition: all 0.35s ease-in-out;
 }
-.menuActive {
-	transform: translateX(0);
-  transition: all 0.35s ease-in-out;
-}
+
 
 /* ----------------------------------------
 Flex items
@@ -211,7 +220,13 @@ Flex items
 Main
 ------------------------------------------- */
 main {
-	margin: 80px 24px 0;
+	margin: 0 24px;
+	padding-top: 80px;
+	transition: all 0.35s ease-in-out;
+}
+
+.marketsPage {
+	background-color: #F0F0F0;
 }
 
 /* ----------------------------------------
